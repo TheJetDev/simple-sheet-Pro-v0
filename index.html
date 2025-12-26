@@ -37,19 +37,19 @@
             .result-text { font-size: 1.6em; }
         }
 
-        .text-label-input { padding: 8px; border: 2px solid #000; border-radius: 6px; font-weight: bold; color: #000; }
+        .text-label-input { padding: 8px; border: 2px solid #000; border-radius: 6px; font-weight: bold; color: #000; outline: none; }
         .calc-area { display: flex; align-items: center; gap: 8px; }
-        .multiplier-input { width: 110px; font-size: 1.5em; padding: 8px; text-align: right; border: 3px solid #007bff; border-radius: 6px; font-weight: bold; color: #000; }
+        .multiplier-input { width: 110px; font-size: 1.5em; padding: 8px; text-align: right; border: 3px solid #007bff; border-radius: 6px; font-weight: bold; color: #000; outline: none; }
         .result-text { font-weight: bold; color: #007bff; }
         .operator-group { display: flex; flex-direction: column; align-items: center; width: 32px; }
         .operator-control { font-size: 0.7em; background: #333; color: #fff; width: 100%; height: 20px; display: flex; justify-content: center; align-items: center; border-radius: 3px; cursor: pointer; }
         .operator-display { font-size: 1.6em; font-weight: bold; text-align: center; color: #000; height: 35px; line-height: 35px; width: 100%; }
-        .percent-toggle, .base-toggle { border: 2px solid #ccc; border-radius: 6px; width: 50px; height: 50px; display: flex; justify-content: center; align-items: center; cursor: pointer; font-weight: bold; background: #fff; font-size: 1.3em; flex-shrink: 0; color: #000; }
+        .percent-toggle, .base-toggle { border: 2px solid #ccc; border-radius: 6px; width: 50px; height: 50px; display: flex; justify-content: center; align-items: center; cursor: pointer; font-weight: bold; background: #fff; font-size: 1.3em; flex-shrink: 0; color: #000; user-select: none; }
         .percent-toggle.active { background: #dc3545; color: #fff; border-color: #dc3545; }
         .base-toggle.chain { background: #007bff; color: #fff; border-color: #007bff; }
-        .action-btn { border: none; background: none; cursor: pointer; font-size: 1.8em; opacity: 0.7; }
+        .action-btn { border: none; background: none; cursor: pointer; font-size: 1.8em; opacity: 0.7; padding: 5px; }
         .master-row { padding: 12px; margin-bottom: 12px; border: 3px solid #dc3545; border-radius: 10px; background-color: #fff; display: flex; align-items: center; justify-content: space-between; }
-        .master-input { width: 45%; padding: 8px; border: 2px solid #dc3545; border-radius: 6px; font-size: 1.5em; text-align: right; font-weight: bold; color: #000; }
+        .master-input { width: 45%; padding: 8px; border: 2px solid #dc3545; border-radius: 6px; font-size: 1.5em; text-align: right; font-weight: bold; color: #000; outline: none; }
         .storage-bar { background: #dee2e6; border: 2px solid #666; border-radius: 10px; padding: 10px; margin-bottom: 12px; display: flex; flex-direction: column; gap: 8px; }
         .storage-controls { display: flex; align-items: center; gap: 10px; }
         .save-btn-main { background: #e67e22; color: white; border: none; padding: 8px 15px; border-radius: 6px; font-weight: bold; cursor: pointer; white-space: nowrap; }
@@ -61,29 +61,30 @@
         .editing .save-chip { border-style: dashed; opacity: 0.8; }
         .editing .save-chip .del-icon { display: inline; }
         .side-calc { flex: 1; min-width: 280px; background: #333; padding: 12px; border-radius: 10px; color: white; height: fit-content; position: sticky; top: 8px; }
-        .calc-display { width: 100%; height: 52px; background: #222; color: #fff; text-align: right; font-size: 1.8em; padding: 8px; border-radius: 6px; margin-bottom: 8px; border:none; }
+        .calc-display { width: 100%; height: 52px; background: #222; color: #fff; text-align: right; font-size: 1.8em; padding: 8px; border-radius: 6px; margin-bottom: 8px; border:none; outline:none; }
         .calc-buttons { display: grid; grid-template-columns: repeat(4, 1fr); gap: 6px; }
         .calc-btn { padding: 15px 5px; border: none; border-radius: 6px; cursor: pointer; font-size: 1.25em; font-weight: bold; background: #555; color: white; }
         .calc-btn.op { background: #f39c12; }
         .calc-btn.equal { background: #27ae60; grid-column: span 2; }
         .calc-btn.clear { background: #c0392b; }
-        .mode-button { flex: 1; padding: 12px 8px; border: none; background: #ddd; border-radius: 8px; cursor: pointer; font-weight: bold; display: flex; flex-direction: column; align-items: center; min-height: 85px; color: #000; }
+        .mode-button { flex: 1; padding: 12px 8px; border: none; background: #ddd; border-radius: 8px; cursor: pointer; font-weight: bold; display: flex; flex-direction: column; align-items: center; min-height: 85px; color: #000; transition: 0.2s; }
         .mode-button.active { background-color: #007bff; color: white; }
         .mode-desc { font-size: 0.7em; margin-top: 6px; opacity: 0.9; font-weight: normal; line-height: 1.3; text-align: center; }
         .util-btn { border: none; background: #6c757d; color: white; padding: 8px 10px; border-radius: 6px; cursor: pointer; font-size: 0.85em; font-weight: bold; }
-        #saveMessage { position: fixed; top: 15px; left: 50%; transform: translateX(-50%); background: #000; color: #fff; padding: 10px 20px; border-radius: 25px; opacity: 0; transition: opacity 0.3s; z-index: 2000; pointer-events: none; font-weight: bold; }
-        
+        #saveMessage { position: fixed; top: 15px; left: 50%; transform: translateX(-50%); background: #000; color: #fff; padding: 12px 25px; border-radius: 25px; opacity: 0; transition: opacity 0.3s; z-index: 2000; pointer-events: none; font-weight: bold; box-shadow: 0 4px 15px rgba(0,0,0,0.2); }
+        .calc-toggle-btn { display: none; position: fixed; bottom: 15px; right: 15px; width: 60px; height: 60px; border-radius: 50%; background: #333; color: white; border: none; font-size: 28px; box-shadow: 0 4px 12px rgba(0,0,0,0.3); z-index: 1001; }
+
         @media screen and (max-width: 900px) {
-            .side-calc { display: none; position: fixed; bottom: 80px; right: 15px; z-index: 1000; width: 280px; }
+            .side-calc { display: none; position: fixed; bottom: 80px; right: 15px; z-index: 1000; width: 280px; box-shadow: 0 0 20px rgba(0,0,0,0.5); }
             .side-calc.active { display: block; }
-            .calc-toggle-btn { display: block !important; position: fixed; bottom: 15px; right: 15px; width: 60px; height: 60px; border-radius: 50%; background: #333; color: white; border: none; font-size: 28px; z-index: 1001; }
+            .calc-toggle-btn { display: block; }
         }
     </style>
 </head>
 <body onload="init()">
 
     <div id="saveMessage"></div>
-    <button class="calc-toggle-btn" style="display:none;" onclick="toggleCalc()">🧮</button>
+    <button class="calc-toggle-btn" onclick="toggleCalc()">🧮</button>
 
     <div class="app-grid">
         <div class="calculator-container">
@@ -106,14 +107,14 @@
             <h2 id="title" style="font-weight: bold; margin-bottom: 12px;">Simple Sheet PRO</h2>
 
             <div class="utility-bar" style="display:flex; justify-content: center; gap:4px; margin-bottom:12px; flex-wrap:wrap;">
-                <button class="util-btn" onclick="clearNumbers()">Sweep <span id="btnClear">Clear</span></button>
+                <button class="util-btn" onclick="clearNumbers()">🧹 <span id="btnClear">Clear</span></button>
                 <button class="util-btn" onclick="exportData()">📤 <span id="btnExport">Exp</span></button>
                 <button class="util-btn" onclick="importData()">📥 <span id="btnImport">Imp</span></button>
                 <button class="util-btn" style="background:#dc3545;" onclick="fullReset()">🔄 <span id="btnReset">Reset</span></button>
             </div>
 
             <div class="mode-toggle" style="display:flex; gap:8px; margin-bottom:12px;">
-                <button id="smartSheetBtn" class="mode-button" onclick="switchMode('smartSheet')">
+                <button id="smartSheetBtn" class="mode-button active" onclick="switchMode('smartSheet')">
                     <span id="txtModeBase">From Base</span>
                     <span id="descModeBase" class="mode-desc"></span>
                 </button>
@@ -180,15 +181,15 @@
 
     <script>
         const languageMap = {
-            en: { title: "Simple Sheet PRO", modeBase: "From Base", descBase: "Fixed: Every row refers to the top value", modePrev: "Flow", descPrev: "Evaluated from top to bottom. Choose 🏠 or 🔗 for each row.", masterLabelName: "Name:", masterLabelStart: "Base Value", copyMsg: "Copied!", btnClear: "Clear", btnExport: "Exp", btnImport: "Imp", btnReset: "Reset", confirmReset: "Reset all?", addRow: "+ Row", copyAll: "Copy All", calcTitle: "Calculator", btnSave: "Save", msgSave: "Saved!", msgLoad: "Loaded!", confirmDel: "Delete this memory?", btnEdit: "Edit", btnDone: "Done" },
-            ja: { title: "Simple Sheet PRO", modeBase: "元の値から", descBase: "固定参照：すべての行が一番上の数値を参照します", modePrev: "フロー計算", descPrev: "上から順に計算。各行で 🏠 または 🔗 を選択可能。", masterLabelName: "計算名:", masterLabelStart: "元の数字", copyMsg: "コピー完了", btnClear: "クリア", btnExport: "出力", btnImport: "読込", btnReset: "初期化", confirmReset: "全削除しますか？", addRow: "+ 行追加", copyAll: "全コピー", calcTitle: "電卓", btnSave: "記憶する", msgSave: "記憶しました", msgLoad: "読み込みました", confirmDel: "この記憶を削除しますか？", btnEdit: "編集", btnDone: "完了" },
-            zh: { title: "Simple Sheet PRO", modeBase: "来自初始値", descBase: "固定参照：每一行都引用顶部的初始值进行计算", modePrev: "流程模式", descPrev: "自上而下依次计算。每行可选择 🏠 或 🔗 模式。", masterLabelName: "名称:", masterLabelStart: "初始値", copyMsg: "已复制", btnClear: "清除", btnExport: "导出", btnImport: "导入", btnReset: "重置", confirmReset: "确认重置所有数据？", addRow: "+ 添加行", copyAll: "复制全部", calcTitle: "计算器", btnSave: "保存", msgSave: "已保存", msgLoad: "已加载", confirmDel: "删除此記憶？", btnEdit: "编辑", btnDone: "完成" },
-            ko: { title: "Simple Sheet PRO", modeBase: "기준값에서", descBase: "고정 참조: 모든 행이 최상단의 기준값을 참조하여 계산합니다", modePrev: "플로우 모드", descPrev: "위에서 아래로 순차적 계산. 각 행에서 🏠 또는 🔗 선택 가능.", masterLabelName: "이름:", masterLabelStart: "기준 숫자", copyMsg: "복사됨", btnClear: "지우기", btnExport: "내보내기", btnImport: "가져오기", btnReset: "초기화", confirmReset: "전체 초기화하시겠습니까?", addRow: "+ 행 추가", copyAll: "전체 복사", calcTitle: "계산기", btnSave: "저장", msgSave: "저장됨", msgLoad: "로드됨", confirmDel: "삭제?", btnEdit: "편집", btnDone: "완료" },
-            es: { title: "Simple Sheet PRO", modeBase: "Desde Base", descBase: "Referencia fija: cada fila se refiere al valor inicial superior", modePrev: "Flujo", descPrev: "Evaluado de arriba a abajo. Elige 🏠 o 🔗 para cada fila.", masterLabelName: "Nombre:", masterLabelStart: "Valor Base", copyMsg: "¡Copiado!", btnClear: "Limpiar", btnExport: "Exportar", btnImport: "Importar", btnReset: "Reiniciar", confirmReset: "¿Reiniciar todo?", addRow: "+ Fila", copyAll: "Copiar todo", calcTitle: "Calculadora", btnSave: "Guardar", msgSave: "¡Guardado!", msgLoad: "¡Cargado!", confirmDel: "Eliminar?", btnEdit: "Editar", btnDone: "Hecho" },
-            fr: { title: "Simple Sheet PRO", modeBase: "Depuis Base", descBase: "Référence fixe : chaque ligne se réfère à la valeur initiale du haut", modePrev: "Flux", descPrev: "Évalué de haut en bas. Choisissez 🏠 ou 🔗 pour chaque ligne.", masterLabelName: "Nom :", masterLabelStart: "Valeur de base", copyMsg: "Copié !", btnClear: "Effacer", btnExport: "Export", btnImport: "Import", btnReset: "Reset", confirmReset: "Tout réinitialiser ?", addRow: "+ Ligne", copyAll: "Tout copier", calcTitle: "Calculatrice", btnSave: "Enregistrer", msgSave: "Enregistré", msgLoad: "Chargé", confirmDel: "Supprimer?", btnEdit: "Modifier", btnDone: "Terminé" },
-            pt: { title: "Simple Sheet PRO", modeBase: "Da Base", descBase: "Referência fixa: cada linha refere-se ao valor inicial no topo", modePrev: "Fluxo", descPrev: "Avaliado de cima para baixo. Escolha 🏠 ou 🔗 para cada linha.", masterLabelName: "Nome:", masterLabelStart: "Valor Base", copyMsg: "Copiado!", btnClear: "Limpar", btnExport: "Exportar", btnImport: "Importar", btnReset: "Reset", confirmReset: "Reiniciar tudo?", addRow: "+ Linha", copyAll: "Copiar tudo", calcTitle: "Calculadora", btnSave: "Salvar", msgSave: "Salvo", msgLoad: "Carregado", confirmDel: "Excluir?", btnEdit: "Editar", btnDone: "Concluir" },
-            de: { title: "Simple Sheet PRO", modeBase: "Vom Basiswert", descBase: "Feste Referenz: Jede Zeile bezieht sich auf den obersten Basiswert", modePrev: "Flow", descPrev: "Berechnung von oben nach unten. Wählen Sie 🏠 oder 🔗 für jede Zeile.", masterLabelName: "Name:", masterLabelStart: "Basiswert", copyMsg: "Kopiert!", btnClear: "Löschen", btnExport: "Export", btnImport: "Import", btnReset: "Reset", confirmReset: "Alles zurücksetzen?", addRow: "+ Zeile", copyAll: "Alles kopieren", calcTitle: "Rechner", btnSave: "Speichern", msgSave: "Gespeichert", msgLoad: "Geladen", confirmDel: "Löschen?", btnEdit: "Bearbeiten", btnDone: "Fertig" },
-            it: { title: "Simple Sheet PRO", modeBase: "Dalla Base", descBase: "Riferimento fisso: ogni riga si riferisce al valore iniziale in alto", modePrev: "Flusso", descPrev: "Valutato dall'alto verso il basso. Scegli 🏠 o 🔗 per ogni riga.", masterLabelName: "Name:", masterLabelStart: "Valore Base", copyMsg: "Copiado!", btnClear: "Cancella", btnExport: "Esporta", btnImport: "Importa", btnReset: "Reset", confirmReset: "Ripristinare tutto?", addRow: "+ Riga", copyAll: "Copia tutto", calcTitle: "Calcolatrice", btnSave: "Salva", msgSave: "Salvato", msgLoad: "Caricato", confirmDel: "Elimina?", btnEdit: "Modifica", btnDone: "Fatto" }
+            en: { title: "Simple Sheet PRO", modeBase: "From Base", descBase: "Fixed: Every row refers to the top value", modePrev: "Flow", descPrev: "Evaluated from top to bottom. Choose 🏠 or 🔗 for each row.", masterLabelName: "Name:", masterLabelStart: "Base Value", rowLabel: "Label", copyMsg: "Copied!", btnClear: "Clear", btnExport: "Exp", btnImport: "Imp", btnReset: "Reset", confirmReset: "Reset all?", addRow: "+ Row", copyAll: "Copy All", calcTitle: "Calculator", btnSave: "Save", msgSave: "Saved!", msgLoad: "Loaded!", confirmDel: "Delete this memory?", btnEdit: "Edit", btnDone: "Done" },
+            ja: { title: "Simple Sheet PRO", modeBase: "元の値から", descBase: "固定参照：すべての行が一番上の数値を参照します", modePrev: "フロー計算", descPrev: "上から順に計算。各行で 🏠 または 🔗 を選択可能。", masterLabelName: "計算名:", masterLabelStart: "元の数字", rowLabel: "項目名", copyMsg: "コピー完了", btnClear: "クリア", btnExport: "出力", btnImport: "読込", btnReset: "初期化", confirmReset: "全削除しますか？", addRow: "+ 行追加", copyAll: "全コピー", calcTitle: "電卓", btnSave: "記憶する", msgSave: "記憶しました", msgLoad: "読み込みました", confirmDel: "この記憶を削除しますか？", btnEdit: "編集", btnDone: "完了" },
+            zh: { title: "Simple Sheet PRO", modeBase: "来自初始値", descBase: "固定参照：每一行都引用顶部の初始值进行计算", modePrev: "流程模式", descPrev: "自上而下依次计算。每行可选择 🏠 或 🔗 模式。", masterLabelName: "名称:", masterLabelStart: "初始値", rowLabel: "名称", copyMsg: "已复制", btnClear: "清除", btnExport: "导出", btnImport: "导入", btnReset: "重置", confirmReset: "确认重置所有数据？", addRow: "+ 添加行", copyAll: "复制全部", calcTitle: "计算器", btnSave: "保存", msgSave: "已保存", msgLoad: "已加载", confirmDel: "删除此記憶？", btnEdit: "编辑", btnDone: "完成" },
+            ko: { title: "Simple Sheet PRO", modeBase: "기준값에서", descBase: "고정 참조: 모든 행이 최상단의 기준값을 참조하여 계산합니다", modePrev: "플로우 모드", descPrev: "위에서 아래로 순차적 계산. 각 행에서 🏠 또는 🔗 선택 가능.", masterLabelName: "이름:", masterLabelStart: "기준 숫자", rowLabel: "항목명", copyMsg: "복사됨", btnClear: "지우기", btnExport: "내보내기", btnImport: "가져오기", btnReset: "초기화", confirmReset: "전체 초기화하시겠습니까?", addRow: "+ 행 추가", copyAll: "전체 복사", calcTitle: "계산기", btnSave: "저장", msgSave: "저장됨", msgLoad: "로드됨", confirmDel: "삭제?", btnEdit: "편집", btnDone: "완료" },
+            es: { title: "Simple Sheet PRO", modeBase: "Desde Base", descBase: "Referencia fija: cada fila se refiere al valor inicial superior", modePrev: "Flujo", descPrev: "Evaluado de arriba a abajo. Elige 🏠 o 🔗 para cada fila.", masterLabelName: "Nombre:", masterLabelStart: "Valor Base", rowLabel: "Etiqueta", copyMsg: "¡Copiado!", btnClear: "Limpiar", btnExport: "Exportar", btnImport: "Importar", btnReset: "Reiniciar", confirmReset: "¿Reiniciar todo?", addRow: "+ Fila", copyAll: "Copiar todo", calcTitle: "Calculadora", btnSave: "Guardar", msgSave: "¡Guardado!", msgLoad: "¡Cargado!", confirmDel: "Eliminar?", btnEdit: "Editar", btnDone: "Hecho" },
+            fr: { title: "Simple Sheet PRO", modeBase: "Depuis Base", descBase: "Référence fixe : chaque ligne se réfère à la valeur initiale du haut", modePrev: "Flux", descPrev: "Évalué de haut en bas. Choisissez 🏠 ou 🔗 pour chaque ligne.", masterLabelName: "Nom :", masterLabelStart: "Valeur de base", rowLabel: "Libellé", copyMsg: "Copié !", btnClear: "Effacer", btnExport: "Export", btnImport: "Import", btnReset: "Reset", confirmReset: "Tout réinitialiser ?", addRow: "+ Ligne", copyAll: "Tout copier", calcTitle: "Calculatrice", btnSave: "Enregistrer", msgSave: "Enregistré", msgLoad: "Chargé", confirmDel: "Supprimer?", btnEdit: "Modifier", btnDone: "Terminé" },
+            pt: { title: "Simple Sheet PRO", modeBase: "Da Base", descBase: "Referência fixa: cada linha refere-se ao valor inicial no topo", modePrev: "Fluxo", descPrev: "Avaliado de cima para baixo. Escolha 🏠 ou 🔗 para cada linha.", masterLabelName: "Nome:", masterLabelStart: "Valor Base", rowLabel: "Rótulo", copyMsg: "Copiado!", btnClear: "Limpiar", btnExport: "Exportar", btnImport: "Importar", btnReset: "Reset", confirmReset: "Reiniciar tudo?", addRow: "+ Linha", copyAll: "Copiar tudo", calcTitle: "Calculadora", btnSave: "Salvar", msgSave: "Salvo", msgLoad: "Carregado", confirmDel: "Excluir?", btnEdit: "Editar", btnDone: "Concluir" },
+            de: { title: "Simple Sheet PRO", modeBase: "Vom Basiswert", descBase: "Feste Referenz: Jede Zeile bezieht sich auf den obersten Basiswert", modePrev: "Flow", descPrev: "Berechnung von oben nach unten. Wählen Sie 🏠 oder 🔗 für jede Zeile.", masterLabelName: "Name:", masterLabelStart: "Basiswert", rowLabel: "Bezeichnung", copyMsg: "Kopiert!", btnClear: "Löschen", btnExport: "Export", btnImport: "Import", btnReset: "Reset", confirmReset: "Alles zurücksetzen?", addRow: "+ Zeile", copyAll: "Alles kopieren", calcTitle: "Rechner", btnSave: "Speichern", msgSave: "Gespeichert", msgLoad: "Geladen", confirmDel: "Löschen?", btnEdit: "Bearbeiten", btnDone: "Fertig" },
+            it: { title: "Simple Sheet PRO", modeBase: "Dalla Base", descBase: "Riferimento fisso: ogni riga si riferisce al valore iniziale in alto", modePrev: "Flusso", descPrev: "Valutato dall'alto verso il basso. Scegli 🏠 o 🔗 per ogni riga.", masterLabelName: "Name:", masterLabelStart: "Valore Base", rowLabel: "Etichetta", copyMsg: "Copiado!", btnClear: "Cancella", btnExport: "Esporta", btnImport: "Importa", btnReset: "Reset", confirmReset: "Ripristinare tutto?", addRow: "+ Riga", copyAll: "Copia tutto", calcTitle: "Calcolatrice", btnSave: "Salva", msgSave: "Salvato", msgLoad: "Carricato", confirmDel: "Elimina?", btnEdit: "Modifica", btnDone: "Fatto" }
         };
 
         let currentLanguage = 'ja'; 
@@ -196,7 +197,6 @@
         let currentCalc = "0";
 
         function init() {
-            // Setup language buttons
             const langCont = document.getElementById('langContainer');
             Object.keys(languageMap).forEach(lang => {
                 const btn = document.createElement('button');
@@ -205,7 +205,6 @@
                 btn.onclick = () => setLanguage(lang);
                 langCont.appendChild(btn);
             });
-            // Load state
             const s = JSON.parse(localStorage.getItem('simpleSheetSettings')||'{}');
             applyData(s);
             setLanguage(localStorage.getItem('simpleSheetLang') || 'ja'); 
@@ -238,11 +237,15 @@
             const editBtn = document.getElementById('editToggle');
             editBtn.textContent = isEditMode ? (d.btnDone + ' ✓') : (d.btnEdit + ' ✎');
             
+            // 全ての行のプレースホルダーを更新
+            document.querySelectorAll('.text-label-input').forEach(input => {
+                input.placeholder = d.rowLabel;
+            });
+
             updateDisplay();
         }
 
         function formatNum(num) {
-            // 小数点第3桁まで表示、かつ不要な0は表示しない設定
             return num.toLocaleString(undefined, { 
                 minimumFractionDigits: 0, 
                 maximumFractionDigits: 3 
@@ -250,7 +253,6 @@
         }
 
         function updateDisplay() {
-            // Smart Mode Calculation
             const mVal = parseFloat(document.getElementById('masterInput').value)||0;
             document.querySelectorAll('#rows-container-smart .row').forEach(r => {
                 const id = r.dataset.id, op=document.getElementById('smart-op-'+id).textContent, mult=parseFloat(r.querySelector('.multiplier-input').value)||0, pct=r.querySelector('.percent-toggle').classList.contains('active');
@@ -258,7 +260,6 @@
                 if(op==='+') res=mVal+mod; else if(op==='-') res=mVal-mod; else if(op==='×') res=pct?mVal*(mult/100):mVal*mult; else if(op==='÷') res=mult!==0?mVal/mult:0;
                 r.querySelector('.result-text').textContent = formatNum(res);
             });
-            // Flow Mode Calculation
             const mValS = parseFloat(document.getElementById('masterInputSimple').value)||0;
             let chain = mValS;
             document.querySelectorAll('#rows-container-simple .row').forEach(r => {
@@ -272,7 +273,6 @@
             saveSettings();
         }
 
-        // --- Memory & Storage ---
         function toggleEditMode() {
             isEditMode = !isEditMode;
             const btn = document.getElementById('editToggle');
@@ -346,19 +346,20 @@
 
         function saveSettings(){ localStorage.setItem('simpleSheetSettings', JSON.stringify(getScreenData())); }
 
-        // --- Row UI ---
         function addRowSmart(s=null) {
             const id = s ? s.id : Math.random().toString(36).substr(2, 5);
+            const ph = languageMap[currentLanguage].rowLabel;
             const div = document.createElement('div'); div.className='row'; div.dataset.id=id;
-            div.innerHTML = `<input type="text" class="text-label-input" placeholder="Label" value="${s?s.label:''}" oninput="saveSettings()"><div class="calc-area"><div class="operator-group"><div class="operator-control" onclick="changeOp('${id}','smart',1)">▲</div><div class="operator-display" id="smart-op-${id}">${s?s.operator:'+'}</div><div class="operator-control" onclick="changeOp('${id}','smart',-1)">▼</div></div><input type="number" step="any" class="multiplier-input" value="${s?s.multiplier:'0'}" oninput="updateDisplay()"><div class="percent-toggle ${s&&s.isPercentActive?'active':''}" onclick="this.classList.toggle('active');updateDisplay()">%</div></div><div class="result-area"><div class="result-text">0</div><div style="display:flex; gap:10px;"><button class="action-btn" onclick="copyRowVal(this)">📋</button><button class="action-btn" onclick="this.closest('.row').remove();updateDisplay()">🗑️</button></div></div>`;
+            div.innerHTML = `<input type="text" class="text-label-input" placeholder="${ph}" value="${s?s.label:''}" oninput="saveSettings()"><div class="calc-area"><div class="operator-group"><div class="operator-control" onclick="changeOp('${id}','smart',1)">▲</div><div class="operator-display" id="smart-op-${id}">${s?s.operator:'+'}</div><div class="operator-control" onclick="changeOp('${id}','smart',-1)">▼</div></div><input type="number" step="any" class="multiplier-input" value="${s?s.multiplier:'0'}" oninput="updateDisplay()"><div class="percent-toggle ${s&&s.isPercentActive?'active':''}" onclick="this.classList.toggle('active');updateDisplay()">%</div></div><div class="result-area"><div class="result-text">0</div><div style="display:flex; gap:10px;"><button class="action-btn" onclick="copyRowVal(this)">📋</button><button class="action-btn" onclick="this.closest('.row').remove();updateDisplay()">🗑️</button></div></div>`;
             document.getElementById('rows-container-smart').appendChild(div); updateDisplay();
         }
 
         function addRowSimple(s=null) {
             const id = s ? s.id : Math.random().toString(36).substr(2, 5);
+            const ph = languageMap[currentLanguage].rowLabel;
             const div = document.createElement('div'); div.className='row'; div.dataset.id=id;
             const isChain = s ? s.baseMode==='chain' : true;
-            div.innerHTML = `<input type="text" class="text-label-input" placeholder="Label" value="${s?s.label:''}" oninput="saveSettings()"><div class="calc-area"><div id="simple-base-${id}" class="base-toggle ${isChain?'chain':''}" onclick="this.classList.toggle('chain');this.textContent=this.classList.contains('chain')?'🔗':'🏠';updateDisplay()">${isChain?'🔗':'🏠'}</div><div class="operator-group"><div class="operator-control" onclick="changeOp('${id}','simple',1)">▲</div><div class="operator-display" id="simple-op-${id}">${s?s.operator:'+'}</div><div class="operator-control" onclick="changeOp('${id}','simple',-1)">▼</div></div><input type="number" step="any" class="multiplier-input" value="${s?s.multiplier:'0'}" oninput="updateDisplay()"><div class="percent-toggle ${s&&s.isPercentActive?'active':''}" onclick="this.classList.toggle('active');updateDisplay()">%</div></div><div class="result-area"><div class="result-text">0</div><div style="display:flex; gap:10px;"><button class="action-btn" onclick="copyRowVal(this)">📋</button><button class="action-btn" onclick="this.closest('.row').remove();updateDisplay()">🗑️</button></div></div>`;
+            div.innerHTML = `<input type="text" class="text-label-input" placeholder="${ph}" value="${s?s.label:''}" oninput="saveSettings()"><div class="calc-area"><div id="simple-base-${id}" class="base-toggle ${isChain?'chain':''}" onclick="this.classList.toggle('chain');this.textContent=this.classList.contains('chain')?'🔗':'🏠';updateDisplay()">${isChain?'🔗':'🏠'}</div><div class="operator-group"><div class="operator-control" onclick="changeOp('${id}','simple',1)">▲</div><div class="operator-display" id="simple-op-${id}">${s?s.operator:'+'}</div><div class="operator-control" onclick="changeOp('${id}','simple',-1)">▼</div></div><input type="number" step="any" class="multiplier-input" value="${s?s.multiplier:'0'}" oninput="updateDisplay()"><div class="percent-toggle ${s&&s.isPercentActive?'active':''}" onclick="this.classList.toggle('active');updateDisplay()">%</div></div><div class="result-area"><div class="result-text">0</div><div style="display:flex; gap:10px;"><button class="action-btn" onclick="copyRowVal(this)">📋</button><button class="action-btn" onclick="this.closest('.row').remove();updateDisplay()">🗑️</button></div></div>`;
             document.getElementById('rows-container-simple').appendChild(div); updateDisplay();
         }
 
@@ -373,7 +374,6 @@
             navigator.clipboard.writeText(t); showMsg(languageMap[currentLanguage].copyMsg);
         }
 
-        // --- Calculator logic ---
         function calcInput(v) { if(currentCalc==="0" && v!==".") currentCalc=v; else currentCalc+=v; document.getElementById('calcDisplay').value=currentCalc; }
         function calcClear() { currentCalc="0"; document.getElementById('calcDisplay').value="0"; }
         function calcBack() { if(currentCalc.length > 1) { currentCalc = currentCalc.slice(0, -1); } else { currentCalc = "0"; } document.getElementById('calcDisplay').value = currentCalc; }
@@ -387,7 +387,6 @@
         function copyCalcResult() { navigator.clipboard.writeText(document.getElementById('calcDisplay').value); showMsg(languageMap[currentLanguage].copyMsg); }
         function toggleCalc() { document.getElementById('sideCalc').classList.toggle('active'); }
 
-        // --- Other Utilities ---
         function clearNumbers(){ 
             document.getElementById('masterInput').value=0; 
             document.getElementById('masterInputSimple').value=0; 
